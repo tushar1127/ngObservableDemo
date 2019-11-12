@@ -1,0 +1,42 @@
+<div class="container">
+    <div class="row">
+        <form [formGroup]="form" (ngSubmit)="onSubmit()" novalidate ngxScrollToFirstInvalid>
+
+
+            <p *ngIf="name.invalid" [ngClass]=" name.invalid ? 'text-danger' : 'text-primary'">Name is invalid.</p>
+            <p *ngIf="name.valid" [ngClass]=" name.invalid ? 'text-danger' : 'text-primary'">Name is valid.</p>
+
+
+            <div formGroupName="name" ngxScrollToFirstInvalid>
+
+                <div class="form-group ">
+                    <input formControlName="first" textColor class="form-control " placeholder="First name">
+                </div>
+                <div class="form-group ">
+                    <input formControlName="last" class="form-control " placeholder="Last name">
+                </div>
+
+
+                <div class="form-group ">
+                    <input formControlName="middle" class="form-control " placeholder="Middle name">
+                </div>
+
+                <div class="form-group ">
+                    <input formControlName="father" class="form-control " placeholder="Father's name">
+                </div>
+
+            </div>
+            <div class="form-group">
+                <input formControlName="email" class="form-control " placeholder="Email">
+            </div>
+            <div class="form-group">
+                <random-input-control [class]="'form-control'" [placeholder]="'Custom input control'" formControlName="random"></random-input-control>
+                <!--   <random-input-control name="random" ngModel #random="ngModel"></random-input-control> -->
+            </div>
+            <br>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+</div>
+
+<!-- <button (click)="setPreset()">Set preset</button> -->

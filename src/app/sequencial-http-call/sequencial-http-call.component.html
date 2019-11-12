@@ -1,0 +1,8 @@
+<form [formGroup]="loginForm">
+  <input type="text" class="form-control" formControlName="username">
+  <input type="text" class="form-control" formControlName="password">
+  <button type="button" (click)="login()">login</button>
+
+  <button type="button" *ngIf="data" (click)="profile()">Profile</button>
+
+</form>
